@@ -11,7 +11,6 @@
             transition="scale-transition"
             width="40"
           />
-
           <h1 id="logo-name">Notes</h1>
           <v-spacer></v-spacer>
         </div>

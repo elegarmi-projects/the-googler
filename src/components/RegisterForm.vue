@@ -17,16 +17,28 @@
 
     <v-text-field
       v-model="password"
+      :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
       :rules="passwordRules"
+      :type="show1 ? 'text' : 'password'"
+      name="password"
       label="Password"
+      hint="At least 8 characters"
+      counter
       required
+      @click:append="show1 = !show1"
     ></v-text-field>
 
     <v-text-field
       v-model="password"
+      :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
       :rules="passwordConfirmRules"
+      :type="show2 ? 'text' : 'password'"
+      name="confirm-password"
       label="Confirm password"
+      hint="At least 8 characters"
+      counter
       required
+      @click:append="show2 = !show2"
     ></v-text-field>
 
     <v-checkbox
@@ -49,6 +61,8 @@ export default {
   name: "RegisterForm",
 
   data: () => ({
+    show1: false,
+    show2: false,
     valid: true,
     name: "",
     nameRules: [
@@ -62,7 +76,7 @@ export default {
     ],
     passwordRules: [
       (v) => !!v || "Password is required",
-      (v) => (v && v.length <= 8) || "Password must be valid",
+      (v) => v.length >= 8 || "Min 8 characters",
     ],
     passwordConfirmRules: [
       (v) => !!v || "Confirm password is required",
