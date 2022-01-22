@@ -13,8 +13,10 @@
           />
 
           <h1 id="logo-name">Notes</h1>
+          <v-spacer></v-spacer>
         </div>
       </a>
+      <nav-bar />
     </v-app-bar>
 
     <v-main>
@@ -23,19 +25,26 @@
 
     <v-footer padless color="yellow darken-2 white--text">
       <v-col class="text-center" cols="12">
-        {{ new Date().getFullYear() }} — <strong>&copy; Google Notes</strong>
+        {{ new Date().getFullYear() }} —
+        <strong>&copy; The Googler Notes</strong>
       </v-col>
     </v-footer>
   </v-app>
 </template>
 
 <script>
+import NavBar from "./components/NavBar.vue";
+
 export default {
   name: "App",
 
   data: () => ({
     //
   }),
+
+  components: {
+    NavBar,
+  },
 };
 </script>
 
@@ -46,6 +55,16 @@ export default {
 .v-application {
   font-family: "Dongle", Arial, sans-serif;
 
+  .v-toolbar__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  header a {
+    color: #ffffff;
+    margin: 0.4em;
+  }
+
   .header-info {
     color: #ffffff;
     text-decoration: none;
@@ -53,6 +72,11 @@ export default {
     h1 {
       font-weight: lighter;
     }
+  }
+
+  form.v-form {
+    width: 40em;
+    margin: 2em auto;
   }
 }
 </style>
