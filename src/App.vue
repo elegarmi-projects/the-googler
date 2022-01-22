@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-app-bar app color="white--text font-weight-light" dark>
-      <a href="/home" class="header-info">
+      <a href="/" class="header-info">
         <div class="d-flex align-center">
           <v-img
             alt="Logo"
@@ -76,6 +76,26 @@ export default {
   form.v-form {
     width: 40em;
     margin: 2em auto;
+  }
+
+  .v-main__wrap {
+    margin-top: 4em;
+
+    .hashtag {
+      padding: 0.5em 1em;
+    }
+
+    .v-btn--fab.v-size--small.v-btn--absolute.v-btn--top {
+      top: -20px;
+      right: 30%;
+    }
+
+    @media (max-width: 700px) {
+      .v-btn--fab.v-size--small.v-btn--absolute.v-btn--top {
+        top: -20px;
+        right: 15%;
+      }
+    }
   }
 }
 </style>

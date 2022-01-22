@@ -1,15 +1,20 @@
 <template>
-  <hello-world />
+  <div>
+    <add-button />
+    <note-card />
+  </div>
 </template>
 
 <script>
-import HelloWorld from "../components/HelloWorld";
+import AddButton from "../components/AddButton.vue";
+import NoteCard from "../components/NoteCard.vue";
 
 export default {
   name: "Home",
 
   components: {
-    HelloWorld,
+    NoteCard,
+    AddButton,
   },
 };
 </script>
